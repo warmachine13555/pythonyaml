@@ -42,6 +42,6 @@ yaml.SafeDumper.add_representer(
 )
 
 with open("config.yml", "w") as f:
-    yaml.dump(data_list, f, sort_keys=False, indent=4, default_flow_style=False)
+    yaml.dump(data_list, f, sort_keys=False, default_flow_style=False)
 
 print("Data written to YAML file successfully.")

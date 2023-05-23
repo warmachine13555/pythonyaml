@@ -1,9 +1,43 @@
 device:
-- switch_suffix: sw-1
-  subnet: 10.0.0.1
-  username: admin
-  password: admin
-- switch_suffix: sw-2
-  subnet: 10.0.0.6
-  username: admin
-  password: admin
+    csr1:
+        switch_suffix: sw-1
+        subnet: 10.0.0.1
+        username: admin
+        password: admin
+        port: 22
+        secret: admin
+    csr2:
+        switch_suffix: sw-2
+        subnet: 10.0.0.2
+        username: admin
+        password: admin
+        port: 22
+        secret: admin
+    csr3:
+        switch_suffix: sw-3
+        subnet: 10.0.0.3
+        username: admin
+        password: admin
+        port: 22
+        secret: admin
+    csr4:
+        switch_suffix: sw-4
+        subnet: 10.0.0.4
+        username: admin
+        password: admin
+        port: 22
+        secret: admin
+    csr5:
+        switch_suffix: sw-5
+        subnet: 10.0.0.5
+        username: admin
+        password: admin
+        port: 22
+        secret: admin
+    csr6:
+        switch_suffix: sw-6
+        subnet: 10.0.0.6
+        username: admin
+        password: admin
+        port: 22
+        secret: admin
