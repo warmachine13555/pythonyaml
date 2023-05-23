@@ -1,0 +1,9 @@
+device:
+- switch_suffix: sw-1
+  subnet: 10.0.0.1
+  username: admin
+  password: admin
+- switch_suffix: sw-2
+  subnet: 10.0.0.6
+  username: admin
+  password: admin
