@@ -1,7 +1,3 @@
-switch_suffix,subnet,username,password
-sw-1,10.0.0.1,admin,admin
-sw-2,10.0.0.2,admin,admin
-sw-3,10.0.0.3,admin,admin
-sw-4,10.0.0.4,admin,admin
-sw-5,10.0.0.5,admin,admin
-sw-6,10.0.0.6,admin,admin
+hostname,ip,username,password,secret
+sw-1,10.0.0.1,admin,admin,secret
+sw-2,10.0.0.6,admin,admin,secret

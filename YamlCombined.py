@@ -12,31 +12,32 @@ def dump_data_to_yaml(data_list, yaml_file):
 
 
 def create_data_list_manual():
-    switch_suffix = input("Please provide a Switch Suffix: ")
-    subnet = input("Please provide a Subnet: ")
+    hostname = input("Please provide a hostname: ")
+    ip = input("Please provide a ip address: ")
     username = input("Please provide a username: ")
     password = input("Please provide a password: ")
+    secret = input("Please provide the secret: ")
     start = input("Please provide the starting point: ")
     switches = int(input("Please provide the number of switches: "))
 
-    subnet_parts = subnet.split(".")
+    ip_parts = ip.split(".")
 
     data_list = []
 
     for i in range(1, switches + 1):
-        current_suffix = f"{switch_suffix}{start}"
+        current_hostname = f"{hostname}{start}"
 
         if i > 1:
-            subnet_parts[3] = str(int(subnet_parts[3]) + 1)
-            subnet = ".".join(subnet_parts)
+            ip_parts[3] = str(int(ip_parts[3]) + 1)
+            subnet = ".".join(ip_parts)
 
         data = {
-            "switch_suffix": str(current_suffix),
-            "ip": str(subnet),
+            "hostname": str(current_hostname),
+            "ip": str(ip),
             "username": str(username),
             "password": str(password),
             "port": 22,
-            "secret": "admin",
+            "secret": str(secret),
         }
 
         data_list.append(data)
@@ -53,12 +54,12 @@ def create_data_list_csv():
         reader = csv.DictReader(file)
         for i, row in enumerate(reader, 1):
             data = {
-                "switch_suffix": row["switch_suffix"],
-                "subnet": row["subnet"],
+                "hostname": row["hostname"],
+                "ip": row["ip"],
                 "username": row["username"],
                 "password": row["password"],
                 "port": 22,
-                "secret": "admin"
+                "secret": row["secret"]
             }
             data_list.append(data)
 
