@@ -1,16 +1,80 @@
 device:
-    sw-1:
+    sw1:
         device_type: cisco_xe
-        hostname: sw-1
+        hostname: sw1
         ip: 10.0.0.1
         username: admin
         password: admin
         port: 22
         secret: secret
-    sw-2:
+    sw2:
         device_type: cisco_xe
-        hostname: sw-2
+        hostname: sw2
         ip: 10.0.0.2
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw3:
+        device_type: cisco_xe
+        hostname: sw3
+        ip: 10.0.0.3
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw4:
+        device_type: cisco_xe
+        hostname: sw4
+        ip: 10.0.0.4
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw5:
+        device_type: cisco_xe
+        hostname: sw5
+        ip: 10.0.0.5
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw6:
+        device_type: cisco_xe
+        hostname: sw6
+        ip: 10.0.0.6
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw7:
+        device_type: cisco_xe
+        hostname: sw7
+        ip: 10.0.0.7
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw8:
+        device_type: cisco_xe
+        hostname: sw8
+        ip: 10.0.0.8
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw9:
+        device_type: cisco_xe
+        hostname: sw9
+        ip: 10.0.0.9
+        username: admin
+        password: admin
+        port: 22
+        secret: secret
+    sw10:
+        device_type: cisco_xe
+        hostname: sw10
+        ip: 10.0.0.10
         username: admin
         password: admin
         port: 22
