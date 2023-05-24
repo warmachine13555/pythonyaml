@@ -48,11 +48,10 @@ def create_data_list_manual():
     return data_list
 
 
-def create_data_list_csv():
-    csv_file = "data.csv"
+def create_data_list_csv(filepath):
     data_list = []
 
-    with open(csv_file, "r") as file:
+    with open(filepath, "r") as file:
         reader = csv.DictReader(file)
         for i, row in enumerate(reader, 1):
             data = {
@@ -71,20 +70,27 @@ def create_data_list_csv():
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python YamlCombined.py <choice>")
-        return
-
-    choice = sys.argv[1]
-
-    if choice == "1":
         data_list = create_data_list_manual()
-    elif choice == "2":
-        data_list = create_data_list_csv()
     else:
-        print("Invalid choice. Please try again.")
-        return
+        choice = sys.argv[1]
 
-    dump_data_to_yaml(data_list, "config.yml")
+        if choice == "-i":
+            if len(sys.argv) < 3:
+                print("No filepath provided. Choosing choice 2 by default.")
+                data_list = create_data_list_csv()
+            else:
+                filepath = sys.argv[2]
+                try:
+                    with open(filepath, "r"):
+                        data_list = create_data_list_csv(filepath)
+                except FileNotFoundError:
+                    print(f"File not found: {filepath}")
+                    return
+        else:
+            print("Invalid choice. Please try again.")
+            return
+
+    dump_data_to_yaml(data_list, "connection.yml")
 
 
 if __name__ == "__main__":
