@@ -11,8 +11,6 @@ def dump_data_to_yaml(data_list, yaml_file):
     print(f"Data written to YAML file '{yaml_file}' successfully.")
 
 
-
-
 def create_data_list_manual():
     hostname = input("Please provide a hostname: ")
     ip = input("Please provide a ip address: ")
