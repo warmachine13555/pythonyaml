@@ -1,3 +1,4 @@
+import sys
 import csv
 import yaml
 
@@ -13,7 +14,7 @@ def dump_data_to_yaml(data_list, yaml_file):
 
 def create_data_list_manual():
     hostname = input("Please provide a hostname: ")
-    ip = input("Please provide a ip address: ")
+    ip = input("Please provide an IP address: ")
     username = input("Please provide a username: ")
     password = input("Please provide a password: ")
     secret = input("Please provide the secret: ")
@@ -68,10 +69,12 @@ def create_data_list_csv():
     return data_list
 
 
-
-
 def main():
-    choice = input("Enter 1 for manual entry or 2 for CSV import: ")
+    if len(sys.argv) < 2:
+        print("Usage: python script.py <choice>")
+        return
+
+    choice = sys.argv[1]
 
     if choice == "1":
         data_list = create_data_list_manual()
