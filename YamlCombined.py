@@ -87,7 +87,7 @@ def main():
                     print(f"File not found: {filepath}")
                     return
         else:
-            print("Invalid choice. Please try again.")
+            print("Invalid choice. Please try again. Try -i [Filepath.csv]")
             return
 
     dump_data_to_yaml(data_list, "connection.yml")
