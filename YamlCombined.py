@@ -71,7 +71,7 @@ def create_data_list_csv():
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python script.py <choice>")
+        print("Usage: python YamlCombined.py <choice>")
         return
 
     choice = sys.argv[1]
