@@ -76,8 +76,8 @@ def main():
 
         if choice == "-i":
             if len(sys.argv) < 3:
-                print("No filepath provided. Choosing choice 2 by default.")
-                data_list = create_data_list_csv()
+                print("No filepath provided. Please try again. Try -i [Filepath.csv]")
+                return
             else:
                 filepath = sys.argv[2]
                 try:
