@@ -33,7 +33,7 @@ def create_data_list_manual():
             ip = ".".join(ip_parts)
 
         data = {
-            "csr": "cisco_xe",
+            "device_type": "cisco_xe",
             "hostname": str(current_hostname),
             "ip": str(ip),
             "username": str(username),
@@ -55,7 +55,7 @@ def create_data_list_csv(filepath):
         reader = csv.DictReader(file)
         for i, row in enumerate(reader, 1):
             data = {
-                "csr": "cisco_xe",
+                "device_type": "cisco_xe",
                 "hostname": row["hostname"],
                 "ip": row["ip"],
                 "username": row["username"],
@@ -90,7 +90,13 @@ def main():
             print("Invalid choice. Please try again. Try -i [Filepath.csv]")
             return
 
-    dump_data_to_yaml(data_list, "connection.yml")
+    output_file = "connection.yml"
+
+    if len(sys.argv) > 3 and sys.argv[3] == "-o":
+        if len(sys.argv) > 4:
+            output_file = sys.argv[4]
+
+    dump_data_to_yaml(data_list, output_file)
 
 
 if __name__ == "__main__":
