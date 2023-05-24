@@ -3,12 +3,14 @@ import yaml
 
 
 def dump_data_to_yaml(data_list, yaml_file):
-    yaml_data = {"device": {f"csr{i}": data for i, data in enumerate(data_list, 1)}}
+    yaml_data = {"device": {data["hostname"]: data for data in data_list}}
 
     with open(yaml_file, "w") as file:
         yaml.dump(yaml_data, file, sort_keys=False, default_flow_style=False, indent=4)
 
     print(f"Data written to YAML file '{yaml_file}' successfully.")
+
+
 
 
 def create_data_list_manual():
@@ -29,9 +31,10 @@ def create_data_list_manual():
 
         if i > 1:
             ip_parts[3] = str(int(ip_parts[3]) + 1)
-            subnet = ".".join(ip_parts)
+            ip = ".".join(ip_parts)
 
         data = {
+            "csr": "cisco_xe",
             "hostname": str(current_hostname),
             "ip": str(ip),
             "username": str(username),
@@ -54,6 +57,7 @@ def create_data_list_csv():
         reader = csv.DictReader(file)
         for i, row in enumerate(reader, 1):
             data = {
+                "csr": "cisco_xe",
                 "hostname": row["hostname"],
                 "ip": row["ip"],
                 "username": row["username"],

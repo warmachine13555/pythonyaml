@@ -1,12 +1,14 @@
 device:
-    csr1:
+    sw-1:
+        csr: cisco_xe
         hostname: sw-1
         ip: 10.0.0.1
         username: admin
         password: admin
         port: 22
         secret: secret
-    csr2:
+    sw-2:
+        csr: cisco_xe
         hostname: sw-2
         ip: 10.0.0.6
         username: admin
